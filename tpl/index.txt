@@ -13,6 +13,7 @@
 {% for interface in interfaces %}
 - {{ interface }}
 {% endfor %}
+
 {% endif %}
 {% if traits|length %}
 ### Traits
