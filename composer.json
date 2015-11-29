@@ -16,12 +16,10 @@
     "php": ">=5.5.0",
     "symfony/console": "~v2.7",
     "twig/twig": "~1.0",
-    "rzajac/phptools": "0.3.*"
+    "rzajac/phptools": "0.3.*",
+    "phpdocumentor/phpdocumentor": "~2.8"
   },
   "require-dev": {
-    "phpunit/phpunit": "*",
-    "mikey179/vfsStream": "1.*",
-    "phpdocumentor/phpdocumentor": "~2.8"
   },
   "autoload": {
     "psr-4": {
