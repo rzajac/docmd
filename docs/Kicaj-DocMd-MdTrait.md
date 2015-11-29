@@ -13,16 +13,16 @@ const MAX_COLUMNS = 6;
 
 ## Methods
 
-|                            |
-| -------------------------- |
-[getClassType](#getclasstype)|
+|                                |
+| ------------------------------ |
+| [getClassType](#getclasstype)  |
 
 ## Properties
 
-|                              |                              |                              |                              |                              |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-        [$tags](#tags)        |   [$constants](#constants)   |  [$properties](#properties)  |     [$methods](#methods)     |[$inheritsFrom](#inheritsfrom)|
-        [$elem](#elem)        |       [$docMd](#docmd)       |            [](#)             |            [](#)             |            [](#)             |
+|                                  |                                  |                                  |                                  |                                  |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+|          [$tags](#tags)          |     [$constants](#constants)     |    [$properties](#properties)    |       [$methods](#methods)       |  [$inheritsFrom](#inheritsfrom)  |
+|          [$elem](#elem)          |         [$docMd](#docmd)         |              [](#)               |              [](#)               |              [](#)               |
 
 -------
 

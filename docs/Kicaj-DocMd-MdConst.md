@@ -7,15 +7,15 @@ Class constant.
 
 ## Methods
 
-|                    |
-| ------------------ |
-[getValue](#getvalue)|
+|                        |
+| ---------------------- |
+| [getValue](#getvalue)  |
 
 ## Properties
 
-|                |                |
-| -------------- | -------------- |
- [$elem](#elem) |[$docMd](#docmd)|
+|                    |                    |
+| ------------------ | ------------------ |
+|   [$elem](#elem)   |  [$docMd](#docmd)  |
 
 -------
 

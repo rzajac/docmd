@@ -13,19 +13,19 @@ const MAX_COLUMNS = 6;
 
 ## Methods
 
-|                                        |                                        |                                        |                                        |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
-     [getClassType](#getclasstype)      |   [getClassHeader](#getclassheader)    |    [getMdFileName](#getmdfilename)     |          [getTags](#gettags)           |
-       [usesTraits](#usestraits)        |       [getExtends](#getextends)        |    [getImplements](#getimplements)     |     [getConstants](#getconstants)      |
-    [getProperties](#getproperties)     |       [getMethods](#getmethods)        |  [getMethodsTable](#getmethodstable)   |[getPropertiesTable](#getpropertiestable)|
-       [buildTable](#buildtable)        |                 [](#)                  |                 [](#)                  |                 [](#)                  |
+|                                            |                                            |                                            |                                            |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+|       [getClassType](#getclasstype)        |     [getClassHeader](#getclassheader)      |      [getMdFileName](#getmdfilename)       |            [getTags](#gettags)             |
+|         [usesTraits](#usestraits)          |         [getExtends](#getextends)          |      [getImplements](#getimplements)       |       [getConstants](#getconstants)        |
+|      [getProperties](#getproperties)       |         [getMethods](#getmethods)          |    [getMethodsTable](#getmethodstable)     | [getPropertiesTable](#getpropertiestable)  |
+|         [buildTable](#buildtable)          |                   [](#)                    |                   [](#)                    |                   [](#)                    |
 
 ## Properties
 
-|                              |                              |                              |                              |                              |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-        [$tags](#tags)        |   [$constants](#constants)   |  [$properties](#properties)  |     [$methods](#methods)     |[$inheritsFrom](#inheritsfrom)|
-        [$elem](#elem)        |       [$docMd](#docmd)       |            [](#)             |            [](#)             |            [](#)             |
+|                                  |                                  |                                  |                                  |                                  |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+|          [$tags](#tags)          |     [$constants](#constants)     |    [$properties](#properties)    |       [$methods](#methods)       |  [$inheritsFrom](#inheritsfrom)  |
+|          [$elem](#elem)          |         [$docMd](#docmd)         |              [](#)               |              [](#)               |              [](#)               |
 
 -------
 

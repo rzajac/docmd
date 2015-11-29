@@ -11,15 +11,15 @@ Class property.
 
 ## Methods
 
-|                                  |                                  |                                  |                                  |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-       [getTags](#gettags)        |    [getPhpType](#getphptype)     |  [getCellValue](#getcellvalue)   |[getDefaultValue](#getdefaultvalue)|
+|                                      |                                      |                                      |                                      |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+|         [getTags](#gettags)          |      [getPhpType](#getphptype)       |    [getCellValue](#getcellvalue)     | [getDefaultValue](#getdefaultvalue)  |
 
 ## Properties
 
-|                |                |                |
-| -------------- | -------------- | -------------- |
- [$tags](#tags) | [$elem](#elem) |[$docMd](#docmd)|
+|                    |                    |                    |
+| ------------------ | ------------------ | ------------------ |
+|   [$tags](#tags)   |   [$elem](#elem)   |  [$docMd](#docmd)  |
 
 -------
 

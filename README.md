@@ -60,4 +60,3 @@ All paths in this file must be relative to `docmd.json` file.
 
 - [DocMd documentation](docs/index.md)
 - [PHP Tools documentation](https://github.com/rzajac/phptools/blob/master/docs/index.md)
-

@@ -3,18 +3,18 @@ Abstract markdown element.
 
 ## Methods
 
-|                                        |                                        |                                        |                                        |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
-      [__construct](#__construct)       |             [make](#make)              |          [getName](#getname)           |      [getFileLink](#getfilelink)       |
-      [getFullName](#getfullname)       |      [isInherited](#isinherited)       | [getInheritedFrom](#getinheritedfrom)  |     [getNameSpace](#getnamespace)      |
-      [getAbstract](#getabstract)       |         [getFinal](#getfinal)          |          [getLine](#getline)           |   [getDescription](#getdescription)    |
-[getLongDescription](#getlongdescription)|          [getPath](#getpath)           |    [getVisibility](#getvisibility)     |        [getStatic](#getstatic)         |
+|                                            |                                            |                                            |                                            |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+|        [__construct](#__construct)         |               [make](#make)                |            [getName](#getname)             |        [getFileLink](#getfilelink)         |
+|        [getFullName](#getfullname)         |        [isInherited](#isinherited)         |   [getInheritedFrom](#getinheritedfrom)    |       [getNameSpace](#getnamespace)        |
+|        [getAbstract](#getabstract)         |           [getFinal](#getfinal)            |            [getLine](#getline)             |     [getDescription](#getdescription)      |
+| [getLongDescription](#getlongdescription)  |            [getPath](#getpath)             |      [getVisibility](#getvisibility)       |          [getStatic](#getstatic)           |
 
 ## Properties
 
-|                |                |
-| -------------- | -------------- |
- [$elem](#elem) |[$docMd](#docmd)|
+|                    |                    |
+| ------------------ | ------------------ |
+|   [$elem](#elem)   |  [$docMd](#docmd)  |
 
 -------
 

@@ -7,9 +7,9 @@ EmptyTableCell.
 
 ## Methods
 
-|                            |
-| -------------------------- |
-[getCellValue](#getcellvalue)|
+|                                |
+| ------------------------------ |
+| [getCellValue](#getcellvalue)  |
 
 -------
 ## Methods

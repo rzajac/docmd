@@ -15,15 +15,15 @@ const TYPE_INTERFACE = 'Interface';
 
 ## Methods
 
-|                    |                    |
-| ------------------ | ------------------ |
-[getClass](#getclass)|[getType](#gettype) |
+|                        |                        |
+| ---------------------- | ---------------------- |
+| [getClass](#getclass)  |  [getType](#gettype)   |
 
 ## Properties
 
-|                |                |
-| -------------- | -------------- |
- [$elem](#elem) |[$docMd](#docmd)|
+|                    |                    |
+| ------------------ | ------------------ |
+|   [$elem](#elem)   |  [$docMd](#docmd)  |
 
 -------
 

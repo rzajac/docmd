@@ -11,16 +11,16 @@ Class method.
 
 ## Methods
 
-|                                    |                                    |                                    |                                    |
-| ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
-   [getArguments](#getarguments)    |        [getTags](#gettags)         |   [getCellValue](#getcellvalue)    |[getReturnPhpType](#getreturnphptype)|
-   [getReturnTag](#getreturntag)    |      [getThrows](#getthrows)       |               [](#)                |               [](#)                |
+|                                        |                                        |                                        |                                        |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
+|     [getArguments](#getarguments)      |          [getTags](#gettags)           |     [getCellValue](#getcellvalue)      | [getReturnPhpType](#getreturnphptype)  |
+|     [getReturnTag](#getreturntag)      |        [getThrows](#getthrows)         |                 [](#)                  |                 [](#)                  |
 
 ## Properties
 
-|                        |                        |                        |                        |                        |                        |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-[$arguments](#arguments)|   [$params](#params)   |   [$return](#return)   |   [$throws](#throws)   |     [$elem](#elem)     |    [$docMd](#docmd)    |
+|                            |                            |                            |                            |                            |                            |
+| -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+|  [$arguments](#arguments)  |     [$params](#params)     |     [$return](#return)     |     [$throws](#throws)     |       [$elem](#elem)       |      [$docMd](#docmd)      |
 
 -------
 

@@ -66,7 +66,7 @@ class MdTable
         $this->anchor = $anchor;
 
         if ($this->anchor) {
-            $this->maxColumnLength = $maxColumnLength * 2;
+            $this->maxColumnLength = $maxColumnLength * 2 + 4;
         } else {
             $this->maxColumnLength = $maxColumnLength;
         }
@@ -122,14 +122,16 @@ class MdTable
         }
 
         $currRow = -1;
-        $addPipe = false;
         for ($i = 0; $i < $cellCount; ++$i) {
+            $rowStart = true;
             $cellStr = '';
             $rowIdx = $i % $this->columnCount;
 
             if ($rowIdx == 0) {
                 ++$currRow;
-                $cellStr = '|'.$cellStr;
+                $rowStart = true;
+            } else {
+                $rowStart = false;
             }
 
             $colIdx = $rowIdx * $this->columnCount + $i;
@@ -142,6 +144,10 @@ class MdTable
 
             if (($i + 1) % $this->columnCount === 0) {
                 $cellStr = $cellStr."\n";
+            }
+
+            if ($rowStart) {
+                $cellStr = '|'.$cellStr;
             }
 
             $table[$currRow][$colIdx] = $cellStr;

@@ -7,15 +7,15 @@ Method argument.
 
 ## Methods
 
-|                        |                        |                        |                        |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-[getPhpType](#getphptype)|[setPhpType](#setphptype)|   [setTag](#settag)    |   [getTag](#gettag)    |
+|                            |                            |                            |                            |
+| -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| [getPhpType](#getphptype)  | [setPhpType](#setphptype)  |     [setTag](#settag)      |     [getTag](#gettag)      |
 
 ## Properties
 
-|                    |                    |                    |                    |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-[$phpType](#phptype)|    [$tag](#tag)    |   [$elem](#elem)   |  [$docMd](#docmd)  |
+|                        |                        |                        |                        |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+|  [$phpType](#phptype)  |      [$tag](#tag)      |     [$elem](#elem)     |    [$docMd](#docmd)    |
 
 -------
 

@@ -3,15 +3,15 @@ Structure.
 
 ## Methods
 
-|                          |                          |                          |
-| ------------------------ | ------------------------ | ------------------------ |
-[__construct](#__construct)|      [make](#make)       |  [getFiles](#getfiles)   |
+|                              |                              |                              |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| [__construct](#__construct)  |        [make](#make)         |    [getFiles](#getfiles)     |
 
 ## Properties
 
-|                                |                                |                                |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-[$structurePath](#structurepath)| [$structureXml](#structurexml) |        [$docMd](#docmd)        |
+|                                    |                                    |                                    |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+|  [$structurePath](#structurepath)  |   [$structureXml](#structurexml)   |          [$docMd](#docmd)          |
 
 -------
 

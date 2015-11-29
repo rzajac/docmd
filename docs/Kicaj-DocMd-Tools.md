@@ -3,9 +3,9 @@ Tools.
 
 ## Methods
 
-|                              |                              |                              |                              |                              |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-     [fixDesc](#fixdesc)      |    [mdAnchor](#mdanchor)     | [getFileLink](#getfilelink)  |[getMdFileName](#getmdfilename)|  [fixVarType](#fixvartype)   |
+|                                  |                                  |                                  |                                  |                                  |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+|       [fixDesc](#fixdesc)        |      [mdAnchor](#mdanchor)       |   [getFileLink](#getfilelink)    | [getMdFileName](#getmdfilename)  |    [fixVarType](#fixvartype)     |
 
 -------
 ## Methods

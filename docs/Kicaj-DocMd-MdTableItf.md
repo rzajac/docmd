@@ -3,9 +3,9 @@ Classes implementing this interface know how to return values to put in markdown
 
 ## Methods
 
-|                            |
-| -------------------------- |
-[getCellValue](#getcellvalue)|
+|                                |
+| ------------------------------ |
+| [getCellValue](#getcellvalue)  |
 
 -------
 ## Methods

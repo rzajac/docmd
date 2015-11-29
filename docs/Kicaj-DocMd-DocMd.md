@@ -7,18 +7,18 @@
 
 ## Methods
 
-|                                      |                                      |                                      |                                      |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-       [configure](#configure)        |         [execute](#execute)          |     [parseConfig](#parseconfig)      |     [execute_old](#execute_old)      |
-[generateStructure](#generatestructure)|    [generateDocs](#generatedocs)     |        [getClass](#getclass)         |         [getPath](#getpath)          |
-     [setDocMdDir](#setdocmddir)      |[getStructurePath](#getstructurepath) |                [](#)                 |                [](#)                 |
+|                                          |                                          |                                          |                                          |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+|         [configure](#configure)          |           [execute](#execute)            |       [parseConfig](#parseconfig)        |       [execute_old](#execute_old)        |
+| [generateStructure](#generatestructure)  |      [generateDocs](#generatedocs)       |          [getClass](#getclass)           |           [getPath](#getpath)            |
+|       [setDocMdDir](#setdocmddir)        |  [getStructurePath](#getstructurepath)   |                  [](#)                   |                  [](#)                   |
 
 ## Properties
 
-|                                |                                |                                |                                |                                |
-| ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-     [$docMdDir](#docmddir)     |       [$tplDir](#tpldir)       |    [$configDir](#configdir)    |[$structurePath](#structurepath)|      [$classes](#classes)      |
-        [$index](#index)        |       [$config](#config)       |             [](#)              |             [](#)              |             [](#)              |
+|                                    |                                    |                                    |                                    |                                    |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
+|       [$docMdDir](#docmddir)       |         [$tplDir](#tpldir)         |      [$configDir](#configdir)      |  [$structurePath](#structurepath)  |        [$classes](#classes)        |
+|          [$index](#index)          |         [$config](#config)         |               [](#)                |               [](#)                |               [](#)                |
 
 -------
 

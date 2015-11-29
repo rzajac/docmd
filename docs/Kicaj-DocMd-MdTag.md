@@ -18,16 +18,16 @@ const TYPE_UNKNOWN = '__unknown__';
 
 ## Methods
 
-|                                        |                                        |                                        |                                        |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
-          [getName](#getname)           |          [getType](#gettype)           |[getDescriptionProp](#getdescriptionprop)|   [getPhpTypeProp](#getphptypeprop)    |
-   [getVarNameProp](#getvarnameprop)    |                 [](#)                  |                 [](#)                  |                 [](#)                  |
+|                                            |                                            |                                            |                                            |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+|            [getName](#getname)             |            [getType](#gettype)             | [getDescriptionProp](#getdescriptionprop)  |     [getPhpTypeProp](#getphptypeprop)      |
+|     [getVarNameProp](#getvarnameprop)      |                   [](#)                    |                   [](#)                    |                   [](#)                    |
 
 ## Properties
 
-|                |                |
-| -------------- | -------------- |
- [$elem](#elem) |[$docMd](#docmd)|
+|                    |                    |
+| ------------------ | ------------------ |
+|   [$elem](#elem)   |  [$docMd](#docmd)  |
 
 -------
 

@@ -3,15 +3,15 @@ Helper for drawing markdown tables.
 
 ## Methods
 
-|                          |                          |                          |                          |
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-[__construct](#__construct)|      [make](#make)       | [getHeader](#getheader)  |   [getRows](#getrows)    |
+|                              |                              |                              |                              |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| [__construct](#__construct)  |        [make](#make)         |   [getHeader](#getheader)    |     [getRows](#getrows)      |
 
 ## Properties
 
-|                                    |                                    |                                    |                                    |
-| ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
-           [$rows](#rows)           |    [$columnCount](#columncount)    |[$maxColumnLength](#maxcolumnlength)|         [$anchor](#anchor)         |
+|                                        |                                        |                                        |                                        |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
+|             [$rows](#rows)             |      [$columnCount](#columncount)      |  [$maxColumnLength](#maxcolumnlength)  |           [$anchor](#anchor)           |
 
 -------
 
