@@ -1,0 +1,23 @@
+## Documentation for {{ projectName }}
+{% if classes|length %}
+### Classes
+
+{% for class in classes %}
+- {{ class }}
+{% endfor %}
+{% endif %}
+{% if interfaces|length %}
+
+### Interfaces
+
+{% for interface in interfaces %}
+- {{ interface }}
+{% endfor %}
+{% endif %}
+{% if traits|length %}
+### Traits
+
+{% for trait in traits %}
+- {{ trait }}
+{% endfor %}
+{% endif %}

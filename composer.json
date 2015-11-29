@@ -1,0 +1,32 @@
+{
+  "name": "rzajac/docmd",
+  "description": "Generate documentation as markdown files",
+  "type": "project",
+  "license": "Apache License 2.0",
+  "authors": [
+    {
+      "name": "Rafal Zajac",
+      "email": "rzajac@gmail.com"
+    }
+  ],
+  "bin": [
+    "docmd"
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "symfony/console": "v2.7.6",
+    "twig/twig": "~1.0",
+    "rzajac/phptools": "0.3.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "mikey179/vfsStream": "1.*",
+    "phpdocumentor/phpdocumentor": "~2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kicaj\\DocMd\\": "src/",
+      "Kicaj\\Test\\DocMd\\": "test/"
+    }
+  }
+}

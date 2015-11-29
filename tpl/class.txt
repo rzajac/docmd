@@ -1,0 +1,102 @@
+## {{ class.getClassHeader() }} {{ class.getFullName() }}
+{{ class.getDescription() }}
+{{ class.getLongDescription() }}
+{% if class.getExtends() %}
+## Extends
+
+{% for extend in class.getExtends() %}
+- {{ extend }}
+{% endfor %}
+
+{% endif %}
+{% if class.getImplements() %}
+## Implements
+
+{% for implemet in class.getImplements() %}
+- {{ implemet }}
+{% endfor %}
+
+{% endif %}
+{% if class.usesTraits()|length %}
+## Uses traits
+
+{% for trait in class.usesTraits() %}
+- {{ trait.getFileLink() }}
+{% endfor %}
+
+{% endif %}
+{% if class.getConstants() %}
+## Constants
+
+```php
+{% for const in class.getConstants() %}
+const {{ const.getName() }} = {{ const.getValue()|raw }};
+{% endfor %}
+```
+
+{% endif %}
+{% if class.getMethods() %}
+## Methods
+
+{% set methodsTbl = class.getMethodsTable() %}
+{{ methodsTbl.getHeader() }}
+{% for row in methodsTbl.getRows() %}
+{% for cell in row %}{{ cell }}{% endfor %}
+{% endfor %}
+
+{% endif %}
+{% if class.getProperties() %}
+## Properties
+
+{% set propertiesTbl = class.getPropertiesTable() %}
+{{ propertiesTbl.getHeader() }}
+{% for row in propertiesTbl.getRows() %}
+{% for cell in row %}{{ cell }}{% endfor %}
+{% endfor %}
+
+-------
+
+{% for prop in class.getProperties() if prop.getVisibility() != 'private' %}
+#### {{ prop.getName() }}
+{{ prop.getDescription() }}
+{{ prop.getLongDescription() }}
+```php
+{{ prop.getVisibility() }}{{ prop.getStatic() }} {{ prop.getPhpType()|raw }} {{ prop.getName() }}{{ prop.getDefaultValue()|raw }}
+```
+
+{% endfor %}
+{% endif %}
+-------
+## Methods
+{% for method in class.getMethods() %}
+#### {{ method.getName() }}
+{{ method.getDescription() }}
+{% if method.getLongDescription() %}
+
+{{ method.getLongDescription() }}
+{% endif %}
+```php
+{{ method.getVisibility() }}{{ method.getFinal() }}{{ method.getAbstract() }}{{ method.getStatic() }} function {{ method.getName() }}({% for arg in method.getArguments() %}{{ arg.getPhpType()|raw }} {{ arg.getName() }}{% if not loop.last %}, {% endif %}{% endfor %}) : {{ method.getReturnPhpType() }}
+```
+{% if method.getArguments()|length %}Arguments:
+{% for arg in method.getArguments() %}
+- _{{ arg.getName() }}_ **{{ arg.getPhpType()|trim }}**{% if arg.getTag().getDescriptionProp() %} - {{ arg.getTag().getDescriptionProp() }}{% if not loop.last %}, {% endif %}{% endif %}
+
+{% endfor %}
+{% endif %}
+{% if method.getThrows()|length %}
+
+Throws:
+{% for throw in method.getThrows() %}
+- {{ throw.getPhpTypeProp() }}{% if not loop.last %}, {% endif %}
+
+{% endfor %}
+{% endif %}
+{% if method.getReturnPhpType() %}
+
+Returns: **{{ method.getReturnPhpType() }}**{% if method.getReturnTag() and method.getReturnTag().getDescriptionProp() %} - {{ method.getReturnTag().getDescriptionProp() }}{% endif %}
+
+{% endif %}
+
+-------
+{% endfor %}
