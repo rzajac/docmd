@@ -54,6 +54,13 @@ class DocMd extends Command
     protected $configDir;
 
     /**
+     * The path to phpdocumentor binary.
+     *
+     * @var string
+     */
+    protected $phpDocBin;
+
+    /**
      * The path to structure file.
      *
      * @var string
@@ -156,16 +163,25 @@ class DocMd extends Command
         }
         $this->config['src'] = $srcDir;
 
-        $phpDocBin = $this->docMdDir.'/vendor/bin/phpdoc';
-        if (!is_executable($phpDocBin)) {
-            throw new Exception(sprintf('phpdocumentor not found: %s', $phpDocBin));
+        $this->checkPhpDocBin();
+    }
+
+    public function checkPhpDocBin()
+    {
+        $this->phpDocBin = $this->docMdDir.'/vendor/bin/phpdoc';
+        $phpDocBinGlobal = $_SERVER['HOME'].'/.composer/vendor/bin/phpdoc';
+
+        if (!is_executable($this->phpDocBin)) {
+            if (!is_executable($phpDocBinGlobal)) {
+                throw new Exception(sprintf('phpdocumentor not found in: [%s, %s]', $phpDocBinVendor, $phpDocBinGlobal));
+            }
+            $this->phpDocBin = $phpDocBinGlobal;
         }
     }
 
     protected function generateStructure(OutputInterface $output)
     {
         $output->writeln('generating structure.xml...');
-        $binDir = $this->docMdDir.'/vendor/bin/phpdoc';
 
         $phpDocOutPath = $this->config['tmp'].'/phpdoc';
         if (!is_dir($phpDocOutPath)) {
@@ -174,7 +190,7 @@ class DocMd extends Command
             }
         }
 
-        $command = sprintf('%s -d %s -t %s --template="xml"', $binDir, $this->config['src'], $phpDocOutPath);
+        $command = sprintf('%s -d %s -t %s --template="xml"', $this->phpDocBin, $this->config['src'], $phpDocOutPath);
         exec($command, $out, $ret);
 
         if ($ret != 0) {
@@ -247,7 +263,7 @@ class DocMd extends Command
             return $this->classes[$className];
         }
 
-        return;
+        return null;
     }
 
     /**
