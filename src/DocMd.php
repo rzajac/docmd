@@ -95,6 +95,8 @@ class DocMd extends Command
         'doc' => 'doc',
         // The name of the project
         'project_name' => 'Unknown project',
+        // The list of classes to exclude
+        'exclude' => []
     ];
 
     protected function configure()
@@ -127,9 +129,7 @@ class DocMd extends Command
         $this->parseConfig();
 
         $structureFile = $this->getStructurePath();
-        if (!is_file($structureFile)) {
-            $this->generateStructure($output);
-        }
+        $this->generateStructure($output);
 
         $output->writeln('generating documentation...');
         $this->generateDocs(Structure::make($structureFile, $this), $this->config['doc']);
@@ -190,6 +190,13 @@ class DocMd extends Command
             }
         }
 
+        $structureXmlFile = $phpDocOutPath.'/structure.xml';
+        if (is_file($structureXmlFile)) {
+            if (!unlink($structureXmlFile)) {
+                throw new Exception(sprintf('could not delete structure.xml file: %s', $structureXmlFile));
+            }
+        }
+
         $command = sprintf('%s -d %s -t %s --template="xml"', $this->phpDocBin, $this->config['src'], $phpDocOutPath);
         exec($command, $out, $ret);
 
@@ -210,6 +217,11 @@ class DocMd extends Command
         foreach ($structure->getFiles() as $file) {
             $class = $file->getClass();
             $classFullName = $class->getFullName();
+
+            if (in_array($classFullName, $this->config['exclude'])) {
+                continue;
+            }
+
             $this->classes[$classFullName] = $class;
 
             switch ($class->getClassType()) {

@@ -76,7 +76,7 @@ const {{ const.getName() }} = {{ const.getValue()|raw }};
 {{ method.getLongDescription() }}
 {% endif %}
 ```php
-{{ method.getVisibility() }}{{ method.getFinal() }}{{ method.getAbstract() }}{{ method.getStatic() }} function {{ method.getName() }}({% for arg in method.getArguments() %}{{ arg.getPhpType()|raw }} {{ arg.getName() }}{% if not loop.last %}, {% endif %}{% endfor %}) : {{ method.getReturnPhpType() }}
+{{ method.getVisibility() }}{{ method.getFinal() }}{{ method.getAbstract() }}{{ method.getStatic() }} function {{ method.getName() }}({% for arg in method.getArguments() %}{{ arg.getPhpType()|raw }} {{ arg.getName() }}{% if not loop.last %}, {% endif %}{% endfor %}) : {{ method.getReturnPhpType(false) }}
 ```
 {% if method.getArguments()|length %}Arguments:
 {% for arg in method.getArguments() %}

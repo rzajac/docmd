@@ -81,11 +81,23 @@ class MdTag extends AbsMdElement
     /**
      * Return PHP type property.
      *
+     * @param bool $link Set to true to create link to other markdown document if possible
+     *
      * @return string
      */
-    public function getPhpTypeProp()
+    public function getPhpTypeProp($link = true)
     {
-        return ''.$this->elem->attributes()['type'];
+        $phpType = ''.$this->elem->attributes()['type'];
+        $phpType = ltrim($phpType, '\\');
+
+        if ($link) {
+            $class = $this->docMd->getClass($phpType);
+            if ($class) {
+                $phpType = Tools::getFileLink($phpType);
+            }
+        }
+
+        return $phpType;
     }
 
     /**

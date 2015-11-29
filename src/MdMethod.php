@@ -126,13 +126,15 @@ class MdMethod extends AbsMdElement implements MdTableItf
     /**
      * Method return type.
      *
+     * @param bool $link Set to true to create link to other markdown document if possible
+     *
      * @return string
      */
-    public function getReturnPhpType()
+    public function getReturnPhpType($link = true)
     {
         $this->getTags();
 
-        return $this->return ? Tools::fixTypeHint($this->return->getPhpTypeProp()) : '';
+        return $this->return ? Tools::fixTypeHint($this->return->getPhpTypeProp($link)) : '';
     }
 
     /**
