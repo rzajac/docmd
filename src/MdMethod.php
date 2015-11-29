@@ -66,10 +66,12 @@ class MdMethod extends AbsMdElement implements MdTableItf
             $this->arguments = [];
             foreach ($this->elem->xpath('argument') as $argument) {
                 $argument = new MdArgument($argument, $this->docMd);
-                $tag = $this->params[$argument->getName()];
-                if ($tag === null) {
+
+                if (!isset($this->params[$argument->getName()])) {
                     continue;
                 }
+                $tag = $this->params[$argument->getName()];
+
                 $argument->setTag($tag)->setPhpType($tag->getPhpTypeProp());
                 $this->arguments[] = $argument;
             }
