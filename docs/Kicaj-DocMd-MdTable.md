@@ -60,14 +60,14 @@ Arguments:
 #### make
 Make.
 ```php
-public static function make(\Kicaj\DocMd\MdTableItf[] $rows, integer $columnCount, integer $maxColumnLength) : \Kicaj\DocMd\MdTable
+public static function make(\Kicaj\DocMd\MdTableItf[] $rows, integer $columnCount, integer $maxColumnLength) : Kicaj\DocMd\MdTable
 ```
 Arguments:
 - _$rows_ **\Kicaj\DocMd\MdTableItf[]** - The array of rows, 
 - _$columnCount_ **integer** - The requested column count, 
 - _$maxColumnLength_ **integer** - The maximum column length
 
-Returns: **\Kicaj\DocMd\MdTable**
+Returns: **[Kicaj\DocMd\MdTable](Kicaj-DocMd-MdTable.md)**
 
 -------
 #### getHeader
@@ -80,9 +80,9 @@ public function getHeader() :
 #### getRows
 Return method table.
 ```php
-public function getRows() : \Kicaj\DocMd\MdTableItf
+public function getRows() : Kicaj\DocMd\MdTableItf
 ```
 
-Returns: **\Kicaj\DocMd\MdTableItf**
+Returns: **[Kicaj\DocMd\MdTableItf](Kicaj-DocMd-MdTableItf.md)**
 
 -------

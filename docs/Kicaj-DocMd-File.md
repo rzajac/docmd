@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\File
-File.
+File entry in structure.xml file.
 
 ## Extends
 
@@ -46,23 +46,23 @@ protected \Kicaj\DocMd\DocMd $docMd
 #### getClass
 Get class object.
 ```php
-public function getClass() : \Kicaj\DocMd\MdClass|\Kicaj\DocMd\MdInterface|\Kicaj\DocMd\MdTrait
+public function getClass() : Kicaj\DocMd\MdClass|\Kicaj\DocMd\MdInterface|\Kicaj\DocMd\MdTrait
 ```
 
 Throws:
-- \Kicaj\Tools\Exception
+- Kicaj\Tools\Exception
 
-Returns: **\Kicaj\DocMd\MdClass|\Kicaj\DocMd\MdInterface|\Kicaj\DocMd\MdTrait**
+Returns: **Kicaj\DocMd\MdClass|\Kicaj\DocMd\MdInterface|\Kicaj\DocMd\MdTrait**
 
 -------
 #### getType
-Get file type.
+Return type of the class this file entry describes.
 ```php
 public function getType() : string
 ```
 
 Throws:
-- \Kicaj\Tools\Exception
+- Kicaj\Tools\Exception
 
 Returns: **string** - The one of self::TYPE_* constants
 

@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\MdInterface
-MdInterface.
+Class describing PHP interface.
 
 ## Extends
 

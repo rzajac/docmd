@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\MdMethod
-Class method.
+Class describing PHP class method.
 
 ## Extends
 
@@ -98,8 +98,10 @@ Returns: **string**
 #### getReturnPhpType
 Method return type.
 ```php
-public function getReturnPhpType() : string
+public function getReturnPhpType(boolean $link) : string
 ```
+Arguments:
+- _$link_ **boolean** - Set to true to create link to other markdown document if possible
 
 Returns: **string**
 
@@ -107,10 +109,10 @@ Returns: **string**
 #### getReturnTag
 Method return tag.
 ```php
-public function getReturnTag() : \Kicaj\DocMd\MdTag
+public function getReturnTag() : Kicaj\DocMd\MdTag
 ```
 
-Returns: **\Kicaj\DocMd\MdTag**
+Returns: **[Kicaj\DocMd\MdTag](Kicaj-DocMd-MdTag.md)**
 
 -------
 #### getThrows

@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\MdClass
-MdClass.
+MdClass describes PHP class.
 
 ## Extends
 
@@ -175,29 +175,29 @@ Returns: **\Kicaj\DocMd\MdMethod[]**
 #### getMethodsTable
 Return MdTable describing methods.
 ```php
-public function getMethodsTable() : \Kicaj\DocMd\MdTable
+public function getMethodsTable() : Kicaj\DocMd\MdTable
 ```
 
-Returns: **\Kicaj\DocMd\MdTable**
+Returns: **[Kicaj\DocMd\MdTable](Kicaj-DocMd-MdTable.md)**
 
 -------
 #### getPropertiesTable
 Return MdTable describing properties.
 ```php
-public function getPropertiesTable() : \Kicaj\DocMd\MdTable
+public function getPropertiesTable() : Kicaj\DocMd\MdTable
 ```
 
-Returns: **\Kicaj\DocMd\MdTable**
+Returns: **[Kicaj\DocMd\MdTable](Kicaj-DocMd-MdTable.md)**
 
 -------
 #### buildTable
 Build markdown table.
 ```php
-protected function buildTable(\Kicaj\DocMd\MdTableItf[] $rows) : \Kicaj\DocMd\MdTable
+protected function buildTable(\Kicaj\DocMd\MdTableItf[] $rows) : Kicaj\DocMd\MdTable
 ```
 Arguments:
 - _$rows_ **\Kicaj\DocMd\MdTableItf[]**
 
-Returns: **\Kicaj\DocMd\MdTable**
+Returns: **[Kicaj\DocMd\MdTable](Kicaj-DocMd-MdTable.md)**
 
 -------

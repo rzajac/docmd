@@ -50,7 +50,7 @@ protected \Kicaj\DocMd\DocMd $docMd
 -------
 ## Methods
 #### getPhpType
-Return element name.
+Return PHP type of the element.
 ```php
 public function getPhpType() : string
 ```
@@ -61,31 +61,31 @@ Returns: **string**
 #### setPhpType
 Set PHP type for this argument.
 ```php
-public function setPhpType(string $phpType) : \Kicaj\DocMd\MdArgument
+public function setPhpType(string $phpType) : Kicaj\DocMd\MdArgument
 ```
 Arguments:
 - _$phpType_ **string**
 
-Returns: **\Kicaj\DocMd\MdArgument**
+Returns: **[Kicaj\DocMd\MdArgument](Kicaj-DocMd-MdArgument.md)**
 
 -------
 #### setTag
 Set the PHPDoc param tag associated with this argument.
 ```php
-public function setTag(\Kicaj\DocMd\MdTag $tag) : \Kicaj\DocMd\MdArgument
+public function setTag([Kicaj\DocMd\MdTag](Kicaj-DocMd-MdTag.md) $tag) : Kicaj\DocMd\MdArgument
 ```
 Arguments:
-- _$tag_ **\Kicaj\DocMd\MdTag**
+- _$tag_ **[Kicaj\DocMd\MdTag](Kicaj-DocMd-MdTag.md)**
 
-Returns: **\Kicaj\DocMd\MdArgument**
+Returns: **[Kicaj\DocMd\MdArgument](Kicaj-DocMd-MdArgument.md)**
 
 -------
 #### getTag
 Return the PHPDoc param tag associated with this argument.
 ```php
-public function getTag() : \Kicaj\DocMd\MdTag
+public function getTag() : Kicaj\DocMd\MdTag
 ```
 
-Returns: **\Kicaj\DocMd\MdTag**
+Returns: **[Kicaj\DocMd\MdTag](Kicaj-DocMd-MdTag.md)**
 
 -------

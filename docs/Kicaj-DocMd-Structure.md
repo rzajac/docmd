@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\Structure
-Structure.
+Class describing phpdocumentor structure.xml.
 
 ## Methods
 
@@ -16,7 +16,7 @@ Structure.
 -------
 
 #### $structurePath
-The path to the structure file.
+The path to the structure.xml file.
 
 ```php
 protected string $structurePath
@@ -41,23 +41,23 @@ protected \Kicaj\DocMd\DocMd $docMd
 #### __construct
 Constructor.
 ```php
-public function __construct(string $structurePath, \Kicaj\DocMd\DocMd $docMd) : 
+public function __construct(string $structurePath, [Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md) $docMd) : 
 ```
 Arguments:
 - _$structurePath_ **string** - The path to the structure file, 
-- _$docMd_ **\Kicaj\DocMd\DocMd** - The DocMd this instance belongs to
+- _$docMd_ **[Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md)** - The DocMd this instance belongs to
 
 -------
 #### make
 Make.
 ```php
-public static function make(string $structurePath, \Kicaj\DocMd\DocMd $docMd) : \Kicaj\DocMd\Structure
+public static function make(string $structurePath, [Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md) $docMd) : Kicaj\DocMd\Structure
 ```
 Arguments:
 - _$structurePath_ **string** - The path to the structure file, 
-- _$docMd_ **\Kicaj\DocMd\DocMd** - The DocMd this instance belongs to
+- _$docMd_ **[Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md)** - The DocMd this instance belongs to
 
-Returns: **\Kicaj\DocMd\Structure**
+Returns: **[Kicaj\DocMd\Structure](Kicaj-DocMd-Structure.md)**
 
 -------
 #### getFiles

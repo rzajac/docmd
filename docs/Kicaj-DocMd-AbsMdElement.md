@@ -37,23 +37,23 @@ protected \Kicaj\DocMd\DocMd $docMd
 #### __construct
 Constructor.
 ```php
-public function __construct(\SimpleXMLElement $elem, \Kicaj\DocMd\DocMd $docMd) : 
+public function __construct(SimpleXMLElement $elem, [Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md) $docMd) : 
 ```
 Arguments:
-- _$elem_ **\SimpleXMLElement** - The XML element, 
-- _$docMd_ **\Kicaj\DocMd\DocMd** - The DocMd this instance belongs to
+- _$elem_ **SimpleXMLElement** - The XML element, 
+- _$docMd_ **[Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md)** - The DocMd this instance belongs to
 
 -------
 #### make
 Make.
 ```php
-public static function make(\SimpleXMLElement $elem, \Kicaj\DocMd\DocMd $docMd) : \Kicaj\DocMd\MdArgument
+public static function make(SimpleXMLElement $elem, [Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md) $docMd) : Kicaj\DocMd\MdArgument
 ```
 Arguments:
-- _$elem_ **\SimpleXMLElement** - The XML element describing argument, 
-- _$docMd_ **\Kicaj\DocMd\DocMd** - The DocMd this instance belongs to
+- _$elem_ **SimpleXMLElement** - The XML element describing argument, 
+- _$docMd_ **[Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md)** - The DocMd this instance belongs to
 
-Returns: **\Kicaj\DocMd\MdArgument**
+Returns: **[Kicaj\DocMd\MdArgument](Kicaj-DocMd-MdArgument.md)**
 
 -------
 #### getName
@@ -66,7 +66,7 @@ Returns: **string**
 
 -------
 #### getFileLink
-Return link to element.
+Return file link to the element.
 ```php
 public function getFileLink() : string
 ```
@@ -75,7 +75,7 @@ Returns: **string**
 
 -------
 #### getFullName
-Return element name with PHP namespace.
+Return the element name with PHP namespace.
 ```php
 public function getFullName() : string
 ```
@@ -84,7 +84,7 @@ Returns: **string**
 
 -------
 #### isInherited
-If element inherited.
+Is the element inherited.
 ```php
 public function isInherited() : string
 ```
@@ -93,16 +93,16 @@ Returns: **string**
 
 -------
 #### getInheritedFrom
-Return element inherited form.
+Return class with namespace the element inherits from.
 ```php
 public function getInheritedFrom() : string
 ```
 
-Returns: **string**
+Returns: **string** - Returns empty string if element is not inherited
 
 -------
 #### getNameSpace
-Return element PHP namespace.
+Return the element namespace.
 ```php
 public function getNameSpace() : string
 ```
@@ -116,7 +116,7 @@ Return abstract.
 public function getAbstract() : string
 ```
 
-Returns: **string**
+Returns: **string** - Returns empty string if element is not abstract
 
 -------
 #### getFinal
@@ -125,7 +125,7 @@ Return final.
 public function getFinal() : string
 ```
 
-Returns: **string**
+Returns: **string** - Returns empty string if element is not final
 
 -------
 #### getLine
@@ -156,7 +156,7 @@ Returns: **string**
 
 -------
 #### getPath
-Get element path.
+Get element filesystem path.
 ```php
 public function getPath() : string
 ```
@@ -165,7 +165,7 @@ Returns: **string**
 
 -------
 #### getVisibility
-Return method visibility.
+Return element visibility.
 ```php
 public function getVisibility() : string
 ```
@@ -174,11 +174,11 @@ Returns: **string**
 
 -------
 #### getStatic
-Return method visibility.
+Return static.
 ```php
 public function getStatic() : string
 ```
 
-Returns: **string**
+Returns: **string** - Returns empty string if element is not static
 
 -------

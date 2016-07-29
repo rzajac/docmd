@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\MdTrait
-MdTrait.
+Class describing PHP trait.
 
 ## Extends
 

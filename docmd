@@ -45,4 +45,5 @@ $application = new Application();
 $application->setName('Markdown documentation generator');
 $application->setVersion('0.1.0');
 $application->add($docMd);
+$application->setDefaultCommand('generate');
 $application->run();

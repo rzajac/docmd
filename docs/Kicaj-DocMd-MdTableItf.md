@@ -1,5 +1,5 @@
 ## Interface Kicaj\DocMd\MdTableItf
-Classes implementing this interface know how to return values to put in markdown table.
+Classes implementing this interface return markdown table cell values.
 
 ## Methods
 

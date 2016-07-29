@@ -1,6 +1,6 @@
 ## Class Kicaj\DocMd\EmptyTableCell
 EmptyTableCell.
-
+A helper class that always returns empty string from getCellValue
 ## Implements
 
 - [Kicaj\DocMd\MdTableItf](Kicaj-DocMd-MdTableItf.md)

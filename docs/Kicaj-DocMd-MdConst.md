@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\MdConst
-Class constant.
+Class describing class constant.
 
 ## Extends
 

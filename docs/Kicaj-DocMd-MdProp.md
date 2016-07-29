@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\MdProp
-Class property.
+Class describing PHP class property.
 
 ## Extends
 

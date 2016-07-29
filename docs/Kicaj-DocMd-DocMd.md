@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\DocMd
-
+Class generates markdown documentation.
 
 ## Extends
 
@@ -9,7 +9,7 @@
 
 |                                          |                                          |                                          |                                          |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-|         [configure](#configure)          |           [execute](#execute)            |       [parseConfig](#parseconfig)        |       [execute_old](#execute_old)        |
+|         [configure](#configure)          |           [execute](#execute)            |       [parseConfig](#parseconfig)        |    [checkPhpDocBin](#checkphpdocbin)     |
 | [generateStructure](#generatestructure)  |      [generateDocs](#generatedocs)       |          [getClass](#getclass)           |           [getPath](#getpath)            |
 |       [setDocMdDir](#setdocmddir)        |  [getStructurePath](#getstructurepath)   |                  [](#)                   |                  [](#)                   |
 
@@ -17,8 +17,8 @@
 
 |                                    |                                    |                                    |                                    |                                    |
 | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
-|       [$docMdDir](#docmddir)       |         [$tplDir](#tpldir)         |      [$configDir](#configdir)      |  [$structurePath](#structurepath)  |        [$classes](#classes)        |
-|          [$index](#index)          |         [$config](#config)         |               [](#)                |               [](#)                |               [](#)                |
+|       [$docMdDir](#docmddir)       |         [$tplDir](#tpldir)         |      [$configDir](#configdir)      |      [$phpDocBin](#phpdocbin)      |  [$structurePath](#structurepath)  |
+|        [$classes](#classes)        |          [$index](#index)          |         [$config](#config)         |               [](#)                |               [](#)                |
 
 -------
 
@@ -43,6 +43,13 @@ The path where configure file was loaded from.
 protected string $configDir
 ```
 
+#### $phpDocBin
+The path to phpdocumentor binary.
+
+```php
+protected string $phpDocBin
+```
+
 #### $structurePath
 The path to structure file.
 
@@ -61,14 +68,14 @@ protected array $classes = array()
 Class index.
 
 ```php
-protected array $index = array()
+protected array $index = array('classes' => array(), 'interfaces' => array(), 'traits' => array())
 ```
 
 #### $config
 DocMD configuration.
 
 ```php
-protected array $config = array('tmp' => 'tmp', 'doc' => 'doc')
+protected array $config = array('tmp' => 'tmp', 'doc' => 'doc', 'project_name' => 'Unknown project', 'exclude' => array())
 ```
 
 -------
@@ -94,10 +101,10 @@ protected function parseConfig() :
 ```
 
 -------
-#### execute_old
+#### checkPhpDocBin
 
 ```php
-protected function execute_old() : 
+public function checkPhpDocBin() : 
 ```
 
 -------
@@ -111,22 +118,22 @@ protected function generateStructure() :
 #### generateDocs
 Generate markdown documentation.
 ```php
-protected function generateDocs(\Kicaj\DocMd\Structure $structure, string $outputPath) : 
+protected function generateDocs([Kicaj\DocMd\Structure](Kicaj-DocMd-Structure.md) $structure, string $outputPath) : 
 ```
 Arguments:
-- _$structure_ **\Kicaj\DocMd\Structure**
-- _$outputPath_ **string**
+- _$structure_ **[Kicaj\DocMd\Structure](Kicaj-DocMd-Structure.md)** - The structure, 
+- _$outputPath_ **string** - The directory path where to put markdown documentation
 
 -------
 #### getClass
 Get class by full name.
 ```php
-public function getClass(string $className) : \Kicaj\DocMd\MdClass|null
+public function getClass(string $className) : Kicaj\DocMd\MdClass|null
 ```
 Arguments:
 - _$className_ **string** - The calss FQN
 
-Returns: **\Kicaj\DocMd\MdClass|null**
+Returns: **Kicaj\DocMd\MdClass|null**
 
 -------
 #### getPath
@@ -143,10 +150,12 @@ Returns: **string**
 #### setDocMdDir
 Set DocMd project directory.
 ```php
-public function setDocMdDir(string $projectDir) : 
+public function setDocMdDir(string $projectDir) : Kicaj\DocMd\DocMd
 ```
 Arguments:
 - _$projectDir_ **string**
+
+Returns: **[Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md)**
 
 -------
 #### getStructurePath

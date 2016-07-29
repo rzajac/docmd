@@ -1,5 +1,5 @@
 ## Class Kicaj\DocMd\MdTag
-MdTag.
+Class describing phpdocumentor tag.
 
 ## Extends
 
@@ -77,8 +77,10 @@ Returns: **string**
 #### getPhpTypeProp
 Return PHP type property.
 ```php
-public function getPhpTypeProp() : string
+public function getPhpTypeProp(boolean $link) : string
 ```
+Arguments:
+- _$link_ **boolean** - Set to true to create link to other markdown document if possible
 
 Returns: **string**
 
