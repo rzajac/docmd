@@ -103,7 +103,7 @@ class MdTable
     /**
      * Return method table.
      *
-     * @return MdTableItf
+     * @return array
      */
     public function getRows()
     {
@@ -123,7 +123,6 @@ class MdTable
 
         $currRow = -1;
         for ($i = 0; $i < $cellCount; ++$i) {
-            $rowStart = true;
             $cellStr = '';
             $rowIdx = $i % $this->columnCount;
 

@@ -16,8 +16,6 @@
  */
 namespace Kicaj\DocMd;
 
-use Kicaj\Tools\Exception;
-
 /**
  * File entry in structure.xml file.
  *
@@ -33,7 +31,7 @@ class File extends AbsMdElement
     /**
      * Get class object.
      *
-     * @throws Exception When class type is unknown
+     * @throws DocMdException When class type is unknown
      *
      * @return MdClass|MdInterface|MdTrait
      */
@@ -53,7 +51,7 @@ class File extends AbsMdElement
                 break;
 
             default:
-                throw new Exception('unknown class type '.$this->getType());
+                throw new DocMdException('unknown class type '.$this->getType());
         }
 
         return $class;
@@ -62,7 +60,7 @@ class File extends AbsMdElement
     /**
      * Return type of the class this file entry describes.
      *
-     * @throws Exception When file type is unknown
+     * @throws DocMdException When file type is unknown
      *
      * @return string The one of self::TYPE_* constants
      */
@@ -75,7 +73,7 @@ class File extends AbsMdElement
         } elseif (isset($this->elem->trait)) {
             $type = self::TYPE_TRAIT;
         } else {
-            throw new Exception('unknown file type');
+            throw new DocMdException('unknown file type');
         }
 
         return $type;

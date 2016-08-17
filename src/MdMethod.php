@@ -88,7 +88,7 @@ class MdMethod extends AbsMdElement implements MdTableItf
     public function getTags()
     {
         if ($this->params !== null) {
-            return;
+            return [];
         }
         $this->params = [];
         $this->return = [];

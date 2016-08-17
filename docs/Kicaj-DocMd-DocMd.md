@@ -124,6 +124,12 @@ Arguments:
 - _$structure_ **[Kicaj\DocMd\Structure](Kicaj-DocMd-Structure.md)** - The structure, 
 - _$outputPath_ **string** - The directory path where to put markdown documentation
 
+Throws:
+- [Kicaj\DocMd\DocMdException](Kicaj-DocMd-DocMdException.md), 
+- Twig_Error_Loader, 
+- Twig_Error_Runtime, 
+- Twig_Error_Syntax
+
 -------
 #### getClass
 Get class by full name.

@@ -47,13 +47,13 @@ Arguments:
 #### make
 Make.
 ```php
-public static function make(SimpleXMLElement $elem, [Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md) $docMd) : Kicaj\DocMd\MdArgument
+public static function make(SimpleXMLElement $elem, [Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md) $docMd) : Kicaj\DocMd\AbsMdElement
 ```
 Arguments:
 - _$elem_ **SimpleXMLElement** - The XML element describing argument, 
 - _$docMd_ **[Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md)** - The DocMd this instance belongs to
 
-Returns: **[Kicaj\DocMd\MdArgument](Kicaj-DocMd-MdArgument.md)**
+Returns: **[Kicaj\DocMd\AbsMdElement](Kicaj-DocMd-AbsMdElement.md)**
 
 -------
 #### getName

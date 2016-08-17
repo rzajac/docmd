@@ -80,9 +80,9 @@ public function getHeader() :
 #### getRows
 Return method table.
 ```php
-public function getRows() : Kicaj\DocMd\MdTableItf
+public function getRows() : array
 ```
 
-Returns: **[Kicaj\DocMd\MdTableItf](Kicaj-DocMd-MdTableItf.md)**
+Returns: **array**
 
 -------

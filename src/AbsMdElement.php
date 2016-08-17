@@ -57,7 +57,7 @@ class AbsMdElement
      * @param SimpleXMLElement $elem  The XML element describing argument
      * @param DocMd            $docMd The DocMd this instance belongs to
      *
-     * @return MdArgument
+     * @return AbsMdElement
      */
     public static function make(SimpleXMLElement $elem, DocMd $docMd)
     {

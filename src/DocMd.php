@@ -17,7 +17,6 @@
  */
 namespace Kicaj\DocMd;
 
-use Kicaj\Tools\Exception;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -90,20 +89,21 @@ class DocMd extends Command
      */
     protected $config = [
         // Path to temporary directory
-        'tmp' => 'tmp',
+        'tmp'          => 'tmp',
         // Output path
-        'doc' => 'doc',
+        'doc'          => 'doc',
         // The name of the project
         'project_name' => 'Unknown project',
         // The list of classes to exclude
-        'exclude' => []
+        'exclude'      => [],
     ];
 
     protected function configure()
     {
         $this->setName('generate')
              ->setDescription('Generate markdown documentation')
-             ->addOption('config', 'c', InputOption::VALUE_OPTIONAL, 'The path to docmd.json. If not set it will search for docmd.json in current directory');
+             ->addOption('config', 'c', InputOption::VALUE_OPTIONAL,
+                 'The path to docmd.json. If not set it will search for docmd.json in current directory');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -111,19 +111,19 @@ class DocMd extends Command
         $configPath = $input->getOption('config');
 
         if ($configPath === null) {
-            $configPath = getcwd().'/docmd.json';
+            $configPath = getcwd() . '/docmd.json';
         }
 
         $this->configDir = realpath(dirname($configPath));
 
         if (!(file_exists($configPath) && is_readable($configPath))) {
-            throw new Exception(sprintf('file %s is not readable', $configPath));
+            throw new DocMdException(sprintf('file %s is not readable', $configPath));
         }
 
         $this->config = array_merge($this->config, json_decode(file_get_contents($configPath), true));
 
         if ($this->config === null) {
-            throw new Exception(sprintf('invalid %s - %s', $configPath, json_last_error_msg()));
+            throw new DocMdException(sprintf('invalid %s - %s', $configPath, json_last_error_msg()));
         }
 
         $this->parseConfig();
@@ -140,26 +140,26 @@ class DocMd extends Command
         $docDir = $this->getPath($this->config['doc']);
         if (!file_exists($docDir)) {
             if (!mkdir($docDir)) {
-                throw new Exception(sprintf('could not create directory for docs: %s', $docDir));
+                throw new DocMdException(sprintf('could not create directory for docs: %s', $docDir));
             }
         } elseif (!is_writable($docDir)) {
-            throw new Exception(sprintf('docs directory is not writable: %s', $docDir));
+            throw new DocMdException(sprintf('docs directory is not writable: %s', $docDir));
         }
         $this->config['doc'] = $docDir;
 
         $tmpDir = $this->getPath($this->config['tmp']);
         if (!file_exists($tmpDir)) {
             if (!mkdir($tmpDir)) {
-                throw new Exception(sprintf('could not create temporary directory: %s', $tmpDir));
+                throw new DocMdException(sprintf('could not create temporary directory: %s', $tmpDir));
             }
         } elseif (!is_writable($tmpDir)) {
-            throw new Exception(sprintf('tmp directory is not writable: %s', $tmpDir));
+            throw new DocMdException(sprintf('tmp directory is not writable: %s', $tmpDir));
         }
         $this->config['tmp'] = $tmpDir;
 
         $srcDir = $this->getPath($this->config['src']);
         if (!is_dir($srcDir)) {
-            throw new Exception(sprintf('source directory not found: %s', $srcDir));
+            throw new DocMdException(sprintf('source directory not found: %s', $srcDir));
         }
         $this->config['src'] = $srcDir;
 
@@ -168,12 +168,12 @@ class DocMd extends Command
 
     public function checkPhpDocBin()
     {
-        $this->phpDocBin = $this->docMdDir.'/vendor/bin/phpdoc';
-        $phpDocBinGlobal = $_SERVER['HOME'].'/.composer/vendor/bin/phpdoc';
+        $this->phpDocBin = $this->docMdDir . '/vendor/bin/phpdoc';
+        $phpDocBinGlobal = $_SERVER['HOME'] . '/.composer/vendor/bin/phpdoc';
 
         if (!is_executable($this->phpDocBin)) {
             if (!is_executable($phpDocBinGlobal)) {
-                throw new Exception(sprintf('phpdocumentor not found in: [%s, %s]', $phpDocBinVendor, $phpDocBinGlobal));
+                throw new DocMdException(sprintf('phpdocumentor not found in: [%s, %s]', $phpDocBinVendor, $phpDocBinGlobal));
             }
             $this->phpDocBin = $phpDocBinGlobal;
         }
@@ -183,17 +183,17 @@ class DocMd extends Command
     {
         $output->writeln('generating structure.xml...');
 
-        $phpDocOutPath = $this->config['tmp'].'/phpdoc';
+        $phpDocOutPath = $this->config['tmp'] . '/phpdoc';
         if (!is_dir($phpDocOutPath)) {
             if (!mkdir($phpDocOutPath)) {
-                throw new Exception(sprintf('could not create phpdocumentor temporary directory: %s', $phpDocOutPath));
+                throw new DocMdException(sprintf('could not create phpdocumentor temporary directory: %s', $phpDocOutPath));
             }
         }
 
-        $structureXmlFile = $phpDocOutPath.'/structure.xml';
+        $structureXmlFile = $phpDocOutPath . '/structure.xml';
         if (is_file($structureXmlFile)) {
             if (!unlink($structureXmlFile)) {
-                throw new Exception(sprintf('could not delete structure.xml file: %s', $structureXmlFile));
+                throw new DocMdException(sprintf('could not delete structure.xml file: %s', $structureXmlFile));
             }
         }
 
@@ -202,7 +202,7 @@ class DocMd extends Command
 
         if ($ret != 0) {
             $output->writeln(implode("\n", $out));
-            throw new Exception('phpdocumentor error');
+            throw new DocMdException('phpdocumentor error');
         }
     }
 
@@ -211,6 +211,11 @@ class DocMd extends Command
      *
      * @param Structure $structure  The structure
      * @param string    $outputPath The directory path where to put markdown documentation
+     *
+     * @throws DocMdException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
      */
     protected function generateDocs(Structure $structure, $outputPath)
     {
@@ -247,19 +252,19 @@ class DocMd extends Command
                 'class' => $class,
             ]);
 
-            file_put_contents($outputPath.DIRECTORY_SEPARATOR.$class->getMdFileName(), $doc);
+            file_put_contents($outputPath . DIRECTORY_SEPARATOR . $class->getMdFileName(), $doc);
         }
 
         $twig = new Twig_Environment($loader);
 
         $doc = $twig->render('index.txt', [
-            'classes' => $this->index['classes'],
-            'interfaces' => $this->index['interfaces'],
-            'traits' => $this->index['traits'],
+            'classes'     => $this->index['classes'],
+            'interfaces'  => $this->index['interfaces'],
+            'traits'      => $this->index['traits'],
             'projectName' => $this->config['project_name'],
         ]);
 
-        file_put_contents($outputPath.DIRECTORY_SEPARATOR.'index.md', $doc);
+        file_put_contents($outputPath . DIRECTORY_SEPARATOR . 'index.md', $doc);
     }
 
     /**
@@ -288,10 +293,10 @@ class DocMd extends Command
     public function getPath($path)
     {
         if ($path[0] != '/') {
-            $path = '/'.$path;
+            $path = '/' . $path;
         }
 
-        return $this->configDir.$path;
+        return $this->configDir . $path;
     }
 
     /**
@@ -304,7 +309,7 @@ class DocMd extends Command
     public function setDocMdDir($projectDir)
     {
         $this->docMdDir = $projectDir;
-        $this->tplDir = $this->docMdDir.'/tpl';
+        $this->tplDir = $this->docMdDir . '/tpl';
 
         return $this;
     }
@@ -316,6 +321,6 @@ class DocMd extends Command
      */
     public function getStructurePath()
     {
-        return $this->config['tmp'].'/phpdoc/structure.xml';
+        return $this->config['tmp'] . '/phpdoc/structure.xml';
     }
 }

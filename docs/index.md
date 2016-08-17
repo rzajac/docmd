@@ -3,6 +3,7 @@
 
 - [Kicaj\DocMd\AbsMdElement](Kicaj-DocMd-AbsMdElement.md)
 - [Kicaj\DocMd\DocMd](Kicaj-DocMd-DocMd.md)
+- [Kicaj\DocMd\DocMdException](Kicaj-DocMd-DocMdException.md)
 - [Kicaj\DocMd\EmptyTableCell](Kicaj-DocMd-EmptyTableCell.md)
 - [Kicaj\DocMd\File](Kicaj-DocMd-File.md)
 - [Kicaj\DocMd\MdArgument](Kicaj-DocMd-MdArgument.md)

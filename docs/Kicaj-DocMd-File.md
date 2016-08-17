@@ -50,7 +50,7 @@ public function getClass() : Kicaj\DocMd\MdClass|\Kicaj\DocMd\MdInterface|\Kicaj
 ```
 
 Throws:
-- Kicaj\Tools\Exception
+- [Kicaj\DocMd\DocMdException](Kicaj-DocMd-DocMdException.md)
 
 Returns: **Kicaj\DocMd\MdClass|\Kicaj\DocMd\MdInterface|\Kicaj\DocMd\MdTrait**
 
@@ -62,7 +62,7 @@ public function getType() : string
 ```
 
 Throws:
-- Kicaj\Tools\Exception
+- [Kicaj\DocMd\DocMdException](Kicaj-DocMd-DocMdException.md)
 
 Returns: **string** - The one of self::TYPE_* constants
 
